@@ -1,0 +1,85 @@
+{
+  "users": {
+    "create_user": {
+      "method": "POST",
+      "url": "/users/",
+      "body": {
+        "tg_id": 123456789,
+        "username": "@ivanov",
+        "first_name": "Иван",
+        "phone": "+79123456789"
+      }
+    },
+    "get_user": {
+      "method": "GET",
+      "url": "/users/123456789"
+    }
+  },
+
+  "cart": {
+    "add_item": {
+      "method": "POST",
+      "url": "/cart/",
+      "body": {
+        "user_tg_id": 123456789,
+        "card_id": 5
+      }
+    },
+    "get_items": {
+      "method": "GET",
+      "url": "/cart/1"
+    },
+    "remove_item": {
+      "method": "DELETE",
+      "url": "/cart/1/5"
+    },
+    "clear_cart": {
+      "method": "DELETE",
+      "url": "/cart/1"
+    }
+  },
+
+  "orders": {
+    "create_order": {
+      "method": "POST",
+      "url": "/orders/",
+      "body": {
+        "user_tg_id": 123456789,
+        "tochka_id": 2,
+        "promocode": "SUMMER25"
+      }
+    }
+  },
+
+  "admin": {
+    "add_category": {
+      "method": "POST",
+      "url": "/admin/category",
+      "body": {
+        "name": "Смартфоны"
+      }
+    },
+    "add_card": {
+      "method": "POST",
+      "url": "/admin/card",
+      "body": {
+        "name": "iPhone 14",
+        "price": 99999.99,
+        "photo": "https://example.com/iphone.jpg",
+        "category_id": 1
+      }
+    },
+    "update_order_status": {
+      "method": "PUT",
+      "url": "/admin/order-status",
+      "body": {
+        "order_info_id": 1,
+        "status": "выполнен"
+      }
+    },
+    "get_promocode": {
+      "method": "GET",
+      "url": "/admin/promocode/SUMMER25"
+    }
+  }
+}
